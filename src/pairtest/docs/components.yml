@@ -1,0 +1,60 @@
+components:
+  schemas:
+    purchase:
+      type: object
+      properties:
+        accountId:
+          type: number
+          example: 1
+        tickets:
+          $ref: '#components/schemas/tickets'
+    tickets:
+      type: object
+      properties:
+        adult:
+          type: number
+          example: 1
+        child:
+          type: number
+          example: 0
+        infant:
+          type: number
+          example: 0
+    purchaseResponse:
+      type: object
+      properties:
+        accountId:
+          type: number
+          example: 1
+        totalPrice:
+          type: number
+          example: 20
+        totalSeatsReserved:
+          type: number
+          example: 1
+        ticketsStructure:
+          $ref: '#components/schemas/ticketsResponse'
+    ticketsResponse:
+      type: object
+      properties:
+        ADULT:
+          type: number
+          example: 1
+        CHILD:
+          type: number
+          example: 0
+        INFANT:
+          type: number
+          example: 0
+    errorResponse:
+      type: object
+      properties:
+        code:
+          type: number
+          example: 400
+        message:
+          type: string
+          example: 'Minimum of 1 ticket has to be purchased'
+        stack:
+          type: string
+          example: "Error: Minimum of 1 ticket has to be purchased\n    at F:\\Work\\dwp-test\\cinema-tickets-javascript\\src\\pairtest\\middlewares\\validate.js:15:17\n    at Layer.handle [as handle_request] (F:\\Work\\dwp-test\\cinema-tickets-javascript\\node_modules\\express\\lib\\router\\layer.js:95:5)\n"
