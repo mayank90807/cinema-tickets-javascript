@@ -49,6 +49,11 @@ List of available routes:
 **Health check**:\
 `get /health-check` - check if api is working
 
+
+The swagger docs is used to provide documentation and will look something like this: 
+
+![](https://i.imgur.com/SMq9yem.png)
+
 # Objective
 
 This is a coding exercise which will allow you to demonstrate how you code and your approach to a given problem. 
